@@ -22,7 +22,7 @@ app = Flask(__name__)
 @app.route("/")
 def analyze_terraform_plan(request: Request):
     try:
-        Validate request
+        # Validate request
         is_valid, error_message = validate_request(request)
         if not is_valid:
             return Response(error_message, status=400)
