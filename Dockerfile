@@ -7,4 +7,4 @@ RUN pip install -r requirements.txt
 
 COPY src/ .
 
-ENTRYPOINT ["python", "-c", "from main import analyze_terraform_plan; analyze_terraform_plan()"]
+ENTRYPOINT ["python", "-c", "from main import analyze_terraform_plan; analyze_terraform_plan"]
