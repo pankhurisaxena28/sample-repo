@@ -5,3 +5,4 @@ MarkupSafe==2.1.3
 requests
 google-cloud-secret-manager
 google-cloud-resource-manager
+gunicorn==23.0.0
