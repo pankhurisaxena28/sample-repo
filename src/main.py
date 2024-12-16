@@ -18,7 +18,7 @@ logger = logging.getLogger(__name__)
 
 app = Flask(__name__)
 
-
+@app.route("/", methods=["POST"])
 def analyze_terraform_plan(request: Request):
     try:
         # Validate request
