@@ -1,6 +1,6 @@
 import logging
 import os
-from flask import before_render_templateequest, Response, Flask, request
+from flask import Response, Flask, request
 
 from validations import validate_request, validate_hmac_signature
 from iacv import (
