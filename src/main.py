@@ -1,6 +1,6 @@
 import logging
 import os
-from flask import Request, Response, Flask
+from flask import before_render_templateequest, Response, Flask, request
 
 from validations import validate_request, validate_hmac_signature
 from iacv import (
@@ -18,8 +18,9 @@ logger = logging.getLogger(__name__)
 
 app = Flask(__name__)
 
+
 @app.route("/", methods=["POST"])
-def analyze_terraform_plan(request: Request):
+def analyze_terraform_plan():
     try:
         # Validate request
         is_valid, error_message = validate_request(request)
@@ -99,7 +100,6 @@ def analyze_terraform_plan(request: Request):
         )
 
         return callback_status_code
-
 
     except Exception as e:
         logger.info(f"Exception occured: {e}")
