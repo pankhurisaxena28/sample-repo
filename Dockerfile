@@ -7,4 +7,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY src/ .
 
-ENTRYPOINT ["python", "-c", "from main import analyze_terraform_plan; analyze_terraform_plan(request)"]
+CMD exec gunicorn --bind :$PORT --workers 1 --threads 8 --timeout 0 main:app
